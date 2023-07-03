@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private int studentID;
     private String firstName, lastName;
     private HashMap<String, Integer> grades;
@@ -60,5 +60,20 @@ public class Student {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentID=" + studentID +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", grades=" + grades +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Student otherStudent) {
+        return this.studentID - otherStudent.getStudentID();
     }
 }
