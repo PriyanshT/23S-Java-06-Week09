@@ -38,6 +38,14 @@ public class Student implements Comparable<Student> {
         return grades.values();
     }
 
+    public double calculateAvgMarks(){
+        double sum = 0;
+        for (int mark:getMarks()) {
+            sum += mark;
+        }
+        return sum/getMarks().size();
+    }
+
     public int getStudentID() {
         return studentID;
     }

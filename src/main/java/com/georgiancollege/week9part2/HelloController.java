@@ -51,5 +51,11 @@ public class HelloController {
         studentTreeSet.addAll(studentArrayList);
 
         System.out.println(studentTreeSet);
+
+        // Stream
+        studentArrayList.stream().filter(abc -> abc.calculateAvgMarks() > 30)
+                .map(Student::getFirstName)
+                .sorted()
+                .forEach(System.out::println);
     }
 }
